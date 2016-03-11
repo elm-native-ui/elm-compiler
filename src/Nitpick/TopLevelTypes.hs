@@ -76,8 +76,10 @@ validMainTypes :: [Type.Canonical]
 validMainTypes =
     [ element
     , html
+    , nativeHtml
     , signal element
     , signal html
+    , signal nativeHtml
     ]
 
 
@@ -89,6 +91,16 @@ html =
 virtualDom :: ModuleName.Canonical
 virtualDom =
     ModuleName.Canonical (Pkg.Name "evancz" "virtual-dom") ["VirtualDom"]
+
+
+nativeHtml :: Type.Canonical
+nativeHtml =
+    Type.Type (Var.fromModule vtree "VTree")
+
+
+vtree :: ModuleName.Canonical
+vtree =
+    ModuleName.Canonical (Pkg.Name "elm-native-ui" "elm-native-ui") ["ReactNative", "ReactNative"]
 
 
 element :: Type.Canonical
