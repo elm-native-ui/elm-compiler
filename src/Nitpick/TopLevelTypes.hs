@@ -95,12 +95,12 @@ virtualDom =
 
 nativeHtml :: Type.Canonical
 nativeHtml =
-    Type.Type (Var.fromModule vtree "VTree")
+    Type.Type (Var.fromModule nativeUi "NativeUi")
 
 
-vtree :: ModuleName.Canonical
-vtree =
-    ModuleName.Canonical (Pkg.Name "elm-native-ui" "elm-native-ui") ["ReactNative", "ReactNative"]
+nativeUi :: ModuleName.Canonical
+nativeUi =
+    ModuleName.Canonical (Pkg.Name "elm-native-ui" "elm-native-ui") ["NativeUi"]
 
 
 element :: Type.Canonical
@@ -116,4 +116,3 @@ signal tipe =
 core :: [String] -> String -> Type.Canonical
 core home name =
   Type.Type (Var.inCore home name)
-
